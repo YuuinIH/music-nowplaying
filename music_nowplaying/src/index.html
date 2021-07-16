@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+{% verbatim myblock %}
+<div id="now-playing" class="demo" >
+        <div v-model="show" >
+            <p>正在播放:</p>
+            {{ nowPlayingSong }}
+        </div>
+</div>
+{% endverbatim myblock %}
+</body>
+<script>
+const nowplaying = {
+    data() {
+    return {
+        nowPlayingSong: 'defalut message',
+        show:true
+    }
+    },
+    mounted () {
+    axios
+    .get('nowplaying/')
+    .then(response => (this.string_from_api = response.data))
+    }
+}
+
+Vue.createApp(nowplaying).mount('#now-playing')
+</script>
+</html>
