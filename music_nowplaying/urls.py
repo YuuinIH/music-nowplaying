@@ -23,5 +23,6 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index),
-    url('nowplaying/', views.nowplaying)
+    url('nowplaying/', views.nowplaying),
+    url('nowplayingswitch/', views.nowplayingswitch)
 ]
