@@ -1,5 +1,5 @@
 
- .nowplaying {
+.nowplaying-render {
   width: 500px;
   height: 80px;
   border: 1px solid;
@@ -16,7 +16,7 @@
 }
 
 
-.nowplaying::before {
+.nowplaying-render::before {
   content:'';
   height: 0px;
   position:absolute;
@@ -26,13 +26,13 @@
   border-color: transparent transparent transparent black;
 }
 
-.nowplayingmessage {
+.nowplaying-render-message {
   font-weight: 500;
   margin-left: 15%;
 }
 
 
-.nowplayingsong {
+.nowplaying-render-song {
   font-weight: 300;
   margin-left: 15%;
   text-overflow:clip;
